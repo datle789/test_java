@@ -17,6 +17,14 @@ public class UserDto {
 
     private List<Crm> Crms;
 
+    public List<Crm> getCrms() {
+        return Crms;
+    }
+
+    public void setCrms(List<Crm> crms) {
+        Crms = crms;
+    }
+
     public long getId() {
         return id;
     }
@@ -39,13 +47,5 @@ public class UserDto {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public List<Crm> getCrms() {
-        return Crms;
-    }
-
-    public void setCrms(List<Crm> crms) {
-        Crms = crms;
     }
 }

@@ -2,6 +2,8 @@ package com.example.demo.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -41,15 +43,15 @@ public class User {
         this.password = password;
     }
 
-    // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch =
-    // FetchType.EAGER)
-    // private List<Crm> Crms;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    // @JsonManagedReference
+    private List<Crm> Crms;
 
-    // public List<Crm> getCrms() {
-    // return Crms;
-    // }
+    public List<Crm> getCrms() {
+        return Crms;
+    }
 
-    // public void setCrms(List<Crm> crms) {
-    // Crms = crms;
-    // }
+    public void setCrms(List<Crm> crms) {
+        Crms = crms;
+    }
 }
